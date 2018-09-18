@@ -17,4 +17,6 @@ windows:
 pip install tensorflow==1.5
 pip install jieba
 pip install jupyter
-	jupyter notebook
+	启动命令:jupyter notebook
+pip install matplotlib
+	画图工具包
