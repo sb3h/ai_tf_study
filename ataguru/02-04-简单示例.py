@@ -34,7 +34,9 @@ note:平均值是除以2
 loss = tf.reduce_mean(tf.square(y_data - y))
 
 # 下面的0.2是学习率
-# 定义一个梯度下降法(GradientDescentOptimizer)来进行训练的优化器
+# 定义一个梯度下降法（最优化算法）(GradientDescentOptimizer)来进行训练的优化器
+#梯度下降法应用在"损失函数的最小值时"
+#梯度上升法应用在"损失函数的最大值时"
 """
 优化器:不断改变k和b的值，从而让loss值越小 
 """
@@ -51,10 +53,10 @@ train = optimizer.minimize(loss)
 init = tf.global_variables_initializer()
 with tf.Session() as sess:
     sess.run(init)
-    for step in range(201):
+    for step in range(2001):
         result = sess.run(train)
         if step%20==0:
             print("step:%s,sess.run([k,b]:%s" % (step,sess.run([k,b])))
-
+            #?k和b是怎么变化的
 
     sess.close()
